@@ -1,0 +1,19 @@
+nav{
+    width: 100%;
+    padding: 1em;
+}
+
+nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
