@@ -1,6 +1,7 @@
 import React from "react";
 import CartIcon from "./../../components/CartIcon";
 import styled from "styled-components";
+import NavLink from "./../../common/NavBar/NavLink";
 
 const navItems = [
   {
@@ -17,15 +18,14 @@ const navItems = [
   }
 ];
 
-const NavBar = ({ children }) => {
+const NavBar = () => {
   return (
     <Nav>
       <Ul>
         {navItems.map(function (item) {
+          console.log(item)
           return (
-            <Li>
-              <A href="#">{item.text}</A>
-            </Li>
+            <NavLink href={item.href} text={item.text}></NavLink>
           );
         })}
         <Li>
