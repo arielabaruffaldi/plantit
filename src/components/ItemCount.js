@@ -17,9 +17,9 @@ const ItemCount = ({ initial = 0, min, max, onAdd }) => {
 
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Button variant="outlined" color="primary" onClick={restar}> - </Button>
+            <Button variant="outlined" color="primary" onClick={restar} disabled={count <= min}> - </Button>
             <P> {count} </P>
-            <Button variant="outlined" color="primary" onClick={sumar}> + </Button>
+            <Button variant="outlined" color="primary" onClick={sumar} disabled={count >= max}> + </Button>
         </div>
     );
 };
