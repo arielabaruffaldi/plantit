@@ -1,60 +1,58 @@
 import React from "react";
-import CartIcon from "../../components/CartIcon/CartIcon";
-import styled from "styled-components";
+import cart from "./../../assets/icons/cart.svg";
+import search from "./../../assets/icons/search.svg";
+import logo from "./../../logo.svg";
+import './styles.scss'
 import NavLink from "./../../common/NavBar/NavLink";
 
-const navItems = [
-  {
-    text: "Link1",
-    href: "#"
-  },
-  {
-    text: "Link2",
-    href: "#"
-  },
-  {
-    text: "Link3",
-    href: "#"
-  }
+const navItems = [{
+  text: "Inicio",
+  href: "#"
+},
+{
+  text: "Link2",
+  href: "#"
+},
+{
+  text: "Link3",
+  href: "#"
+}
 ];
 
 const NavBar = () => {
   return (
-    <Nav>
-      <Ul>
+    <nav>
+      <a href="#" className="logo">
+        <img src={logo} width="50" />
+      </a>
+      <ul className = "nav-links">
         {navItems.map(function (item, key) {
-          return (
-            <NavLink href={item.href} key={key} text={item.text}></NavLink>
-          );
-        })}
-        <Li>
-          <A href="#">
-            <CartIcon />
-          </A>
-        </Li>
-      </Ul>
-    </Nav>
+          return (<NavLink href={item.href}
+            key={key}
+            text={item.text} > </NavLink>
+          )
+        })
+        }
+      </ul>
+      <ul className="right-nav">
+        <li>
+          <a href="#">
+            <img src={search} width="15" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Cuenta
+          </a>
+        </li>
+        <li>
+          <a href="#" >
+            <img src={cart} width="50" />
+          </a>
+        </li >
+      </ul>
+    </nav>
   );
 };
 
 export default NavBar;
-
-const Nav = styled.nav`
-  width: 100%;
-  padding: 1em;
-`;
-
-const Ul = styled.ul`
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-`;
-
-const Li = styled.li`
-  list-style: none;
-`;
-
-const A = styled.a`
-  color: white;
-  text-decoration: none;
-`;

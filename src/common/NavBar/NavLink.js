@@ -1,22 +1,14 @@
 import React from 'react';
-import styled from "styled-components";
+import './styles.css'
 
 
 const NavLink = ({href, text}) => {
     return(
-        <Li>
-            <A href={href}>{text}</A>
-        </Li>
+        <li>
+            <a href={href}>{text}</a>
+        </li>
     )
 }
 
 export default NavLink;
 
-const Li = styled.li`
-  list-style: none;
-`;
-
-const A = styled.a`
-  color: white;
-  text-decoration: none;
-`;
