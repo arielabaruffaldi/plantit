@@ -22,10 +22,9 @@ const NavBar = () => {
   return (
     <Nav>
       <Ul>
-        {navItems.map(function (item) {
-          console.log(item)
+        {navItems.map(function (item, key) {
           return (
-            <NavLink href={item.href} text={item.text}></NavLink>
+            <NavLink href={item.href} key={key} text={item.text}></NavLink>
           );
         })}
         <Li>

@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 
 const NavLink = ({href, text}) => {
-    console.log(text)
     return(
         <Li>
             <A href={href}>{text}</A>

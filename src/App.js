@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
-      <Home greeting="Mensaje de prueba"></Home>
+      <Home greeting="Productos"></Home>
     </div>
   );
 }

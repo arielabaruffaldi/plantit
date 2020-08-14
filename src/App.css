@@ -8,9 +8,12 @@
 }
 
 
-nav ul{
+ul{
   padding: 0;
   margin: 0;
+}
+ul li{
+  list-style: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,7 +25,6 @@ nav ul{
 .App-header {
   background-color: #282c34;
   display: flex;
-  
 }
 
 .App-link {
