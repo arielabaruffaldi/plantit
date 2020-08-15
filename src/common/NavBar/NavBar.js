@@ -2,7 +2,7 @@ import React from "react";
 import cart from "./../../assets/icons/cart.svg";
 import search from "./../../assets/icons/search.svg";
 import logo from "./../../logo.svg";
-import './styles.scss'
+import './NavLink.scss'
 import NavLink from "./../../common/NavBar/NavLink";
 
 const navItems = [{
