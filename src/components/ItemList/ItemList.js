@@ -9,7 +9,6 @@ function getFromRemote() {
         setTimeout(() => {
             res([{ id: 1, nombre: "Gorro", precio: 10 }, { id: 2, nombre: "Pulsera", precio: 5 }]);
         }, 0);
-
     });
 }
 
@@ -21,18 +20,21 @@ function ItemList() {
         });
     }, []);
 
-    return (
-        <Ul classList="itemList">
-            {products.map(producto => (
-                <Item id={producto.id} nombre={producto.nombre} precio={producto.precio}></Item>
-            ))}
-        </Ul>
+    return ( <
+        Ul classList = "itemList" > {
+            products.map(producto => ( <
+                Item id = { producto.id }
+                nombre = { producto.nombre }
+                precio = { producto.precio } > < /Item>
+            ))
+        } <
+        /Ul>
     )
 }
 
 
 export default ItemList;
 
-const Ul = styled.ul`
+const Ul = styled.ul `
     width: 70%
 `

@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 15em;
+    margin: auto;
     >div {
         display: flex;
         justify-content: center;
