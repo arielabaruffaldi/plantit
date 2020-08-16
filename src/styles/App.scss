@@ -1,5 +1,8 @@
+@import './base.scss';
 * {
     box-sizing: border-box;
+    color: $secondaryColor;
+    @include paragraphFont();
 }
 
 ul {

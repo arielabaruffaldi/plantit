@@ -1,4 +1,9 @@
-@import '../../styles/variables.scss';
+@import '../../styles/base.scss';
+header {
+    position: fixed;
+    width: 100%;
+}
+
 nav {
     width: 100%;
     padding: 1em 3em;
@@ -20,7 +25,8 @@ nav {
             font-weight: 700;
             font-size: .8em;
             a {
-                color: $secundaryColor;
+                color: $secondaryColor;
+                @include titleFont();
                 text-decoration: none;
             }
         }
@@ -36,7 +42,7 @@ nav {
                 padding: 0 1em;
                 &:first-child {
                     >a {
-                        border-bottom: 1.5px solid $secundaryColor;
+                        border-bottom: 1.5px solid $secondaryColor;
                     }
                 }
             }

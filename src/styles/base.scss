@@ -1,0 +1,10 @@
+$primaryColor: #6DE375;
+$secondaryColor: #000;
+// MIXINS
+@mixin titleFont {
+    font-family: 'Archivo', sans-serif;
+}
+
+@mixin paragraphFont {
+    font-family: 'Barlow', sans-serif;
+}
