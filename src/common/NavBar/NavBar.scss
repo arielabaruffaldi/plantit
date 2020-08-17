@@ -10,10 +10,13 @@ nav {
     padding: 1em 3em;
     display: flex;
     .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-right: 3em;
+        font-weight: 700;
+        line-height: .85;
+        font-size: 2em;
+        span {
+            font-weight: 300;
+        }
     }
     ul {
         display: flex;
