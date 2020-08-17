@@ -20,11 +20,11 @@ const ItemCount = ({ initial = 0, min, max, onAdd }) => {
     return (
         <div className="itemCount">
             <div>
-                <Button variant="outlined" color="primary" onClick={restar} disabled={count <= min}> <RemoveIcon color="primary"/> </Button>
+                <Button variant="outlined" color="primary" onClick={restar} disabled={count <= min}> <RemoveIcon gcolor="primary"/> </Button>
                 <p> {count} </p>
                 <Button variant="outlined" color="primary" onClick={sumar} disabled={count >= max}> <AddIcon color="primary"></AddIcon> </Button>
             </div>
-            <Button variant="outlined" color="primary" onClick={onAdd}> agregar al carrito </Button>
+            <Button variant="outlined" color="primary" onClick={onAdd} className='addToCart'> agregar al carrito </Button>
         </div>
     );
 };

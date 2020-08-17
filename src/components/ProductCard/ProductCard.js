@@ -1,12 +1,11 @@
 import React from 'react';
-import imgPrueba from './../../assets/img/home.png';
 import './ProductCard.scss';
 import ItemCount from './../ItemCount/ItemCount';
 
-const ProductCard = ({ title, price }) => {
+const ProductCard = ({ title, price, img }) => {
     return (
         <article className='productCard'>
-            <img src={imgPrueba} />
+            <img src={img} />
             <div className='info'>
                 <h3>{title}</h3>
                 <p>{`$${price}`}</p>
