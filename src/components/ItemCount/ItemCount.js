@@ -10,17 +10,17 @@ const ItemCount = ({ initial = 0, min, max, onAdd }) => {
     const [count, setcount] = useState(initial);
 
     const restar = () => {
-        return count > min ? setcount(count - 1) : null;
+        if (count > min) { setcount(count - 1) }
     };
 
     const sumar = () => {
-        return count < max ? setcount(count + 1) : null;
+        if (count < max) { setcount(count + 1) }
     };
 
     return (
         <div className="itemCount">
             <div>
-                <Button variant="outlined" color="primary" onClick={restar} disabled={count <= min}> <RemoveIcon gcolor="primary"/> </Button>
+                <Button variant="outlined" color="primary" onClick={restar} disabled={count <= min}> <RemoveIcon gcolor="primary" /> </Button>
                 <p> {count} </p>
                 <Button variant="outlined" color="primary" onClick={sumar} disabled={count >= max}> <AddIcon color="primary"></AddIcon> </Button>
             </div>
