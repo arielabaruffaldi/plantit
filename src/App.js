@@ -2,9 +2,11 @@ import React from "react";
 import "./styles/App.scss";
 import NavBar from "./common/NavBar/NavBar";
 import Home from "./page/Home/Home";
-import Galeria from "./page/Galeria/Galeria";
-import ItemCount from './components/ItemCount/ItemCount';
 import ItemList from './components/ItemList/ItemList';
+import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import imgPrueba from './assets/img/home.png';
+
 import styled from "styled-components";
 import phone from './assets/icons/phone.svg'
 
@@ -18,8 +20,10 @@ function App() {
       <a href="#"> 11 2345 6789 </a>
     </PhoneSticky >
     <Home />
-    <Galeria />
-
+    <ItemList></ItemList>
+    <ItemDetail title="Nombre producto" price={100} img={imgPrueba}/>
+{/* 
+    <Galeria /> */}
   </div>
   );
 }

@@ -1,31 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import "./Item.scss";
 
-const Item = ({ id, nombre, precio }) => {
-    return (
-        <Ul className="item">
-            <li>
-                {id}
-            </li>
-            <li>
-                {nombre}
-            </li>
-            <li>
-                {`$${precio}`}
-            </li>
-        </Ul>
-    )
-}
+const Item = ({ id, img, title, price }) => {
+  return (
+    <li className="item">
+      <a href={`/${id}`}>
+        <img src={img} />
+        <div className="info">
+          <h3>{title}</h3>
+          <p>{`$${price}`}</p>
+        </div>
+      </a>
+    </li>
+  );
+};
 
 export default Item;
-
-const Ul = styled.ul`
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  margin: 1em 0;
-  li{
-      padding: 0 .5em;
-  }
-  
-`;

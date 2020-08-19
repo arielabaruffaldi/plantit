@@ -1,14 +1,15 @@
 import React from 'react';
-import './ProductCard.scss';
+import './ItemDetail.scss';
 import ItemCount from './../ItemCount/ItemCount';
 
-const ProductCard = ({ title, price, img }) => {
+const ItemDetail = (item) => {
+    console.log(item)
     return (
-        <article className='productCard'>
-            <img src={img} />
+        <article className='itemDetail'>
+            <img src={item.img} />
             <div className='info'>
-                <h3>{title}</h3>
-                <p>{`$${price}`}</p>
+                <h3>{item.title}</h3>
+                <p>{`$${item.price}`}</p>
             </div>
 
             <ItemCount
@@ -19,4 +20,4 @@ const ProductCard = ({ title, price, img }) => {
     )
 }
 
-export default ProductCard;
+export default ItemDetail;

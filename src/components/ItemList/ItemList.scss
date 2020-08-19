@@ -1,0 +1,9 @@
+.ItemListWrapper {
+  padding: 4em;
+  h2 {
+    font-size: 2em;
+  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 2em;
+}
