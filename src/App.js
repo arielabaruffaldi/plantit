@@ -2,29 +2,27 @@ import React from "react";
 import "./styles/App.scss";
 import NavBar from "./common/NavBar/NavBar";
 import Home from "./page/Home/Home";
-import ItemList from './components/ItemList/ItemList';
-import ItemDetail from './components/ItemDetail/ItemDetail';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import imgPrueba from './assets/img/home.png';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import ItemList from "./components/ItemList/ItemList";
 
 import styled from "styled-components";
-import phone from './assets/icons/phone.svg'
-
+import phone from "./assets/icons/phone.svg";
 
 function App() {
-  return (<div className="App" >
-    <header className="App-header" >
-      <NavBar />
-    </header>
-    <PhoneSticky >
-      <a href="#"> 11 2345 6789 </a>
-    </PhoneSticky >
-    <Home />
-    <ItemList></ItemList>
-    <ItemDetail title="Nombre producto" price={100} img={imgPrueba}/>
-{/* 
+  return (
+    <div className="App">
+      <header className="App-header">
+        <NavBar />
+      </header>
+      <PhoneSticky>
+        <a href="#"> 11 2345 6789 </a>
+      </PhoneSticky>
+      <Home />
+      <ItemList/>
+      <ItemDetailContainer idToShow = {2}/>
+      {/* 
     <Galeria /> */}
-  </div>
+    </div>
   );
 }
 
@@ -50,4 +48,4 @@ const PhoneSticky = styled.span`
       left: -3em;
     }
   }
-`
+`;

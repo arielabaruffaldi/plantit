@@ -1,32 +1,38 @@
 .itemCount {
+  display: flex;
+  flex-direction: column;
+  max-width: 15em;
+  > div {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 15em;
-    >div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: .5em 0;
-        >p {
-            margin: 0 1em;
-        }
+    align-items: center;
+    margin: 0.5em 0;
+    > p {
+      margin: 0 1em;
+      min-width: 1.5em;
+      text-align: center;
     }
-    .MuiButton-label {
-        width: inherit;
-    }
-    .MuiButtonBase-root {
-        min-width: inherit;
-        padding: 0.5em;
-        border-radius: 100%;
-    }
-    .MuiButtonBase-root.addToCart {
-        border: none;
-        font-weight: 700;
-        font-size: .9em;
-    }
-    .MuiSvgIcon-root {
-        width: 0.6em;
-        height: 0.6em;
-    }
+  }
+  .addToCart{
+    background: transparent;
+    border: none;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 600;
+    padding: 1em 0;
+  }
+  .MuiButton-label {
+    width: inherit;
+  }
+  .MuiButtonBase-root {
+    min-width: inherit;
+    padding: 0.5em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .MuiSvgIcon-root {
+    width: 0.6em;
+    height: 0.6em;
+  }
 }

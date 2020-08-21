@@ -1,41 +1,33 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
-import imgPrueba from './../../assets/img/home.png';
-import './ItemList.scss';
-
-
-function getFromRemote() {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res([
-        { id: 1, title: "Monstera", price: 10 },
-        { id: 2, title: "Sanseviera", price: 5 },
-        { id: 3, title: "Dieffembaquia", price: 50},
-        { id: 4, title: "Espatifilio", price: 500 }
-      ]);
-    }, 0);
-  });
-}
+import "./ItemList.scss";
+import productsList from "../../constants/productsList";
 
 function ItemList() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    getFromRemote().then((res) => {
+    productsList().then((res) => {
       setProducts(res);
+      setLoading(false);
     });
   }, []);
 
   return (
-    <ul className='ItemListWrapper'>
-      {products.map((producto) => (
-        <Item
-          id={producto.id}
-          title={producto.title}
-          price={producto.price}
-          img={imgPrueba}
-        ></Item>
-      ))}
-    </ul>
+    <>
+    {loading && <p>Cargando prods</p>}
+
+      <ul className="ItemListWrapper">
+        {products.map((producto) => (
+          <Item
+            id={producto.id}
+            title={producto.title}
+            price={producto.price}
+            img={producto.img}
+          ></Item>
+        ))}
+      </ul>
+    </>
   );
 }
 

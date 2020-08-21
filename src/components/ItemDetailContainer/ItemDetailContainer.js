@@ -1,24 +1,35 @@
 import React, { useState, useEffect } from "react";
-import Item from "./../ItemList/Item";
+import ItemDetail from "./../ItemDetail/ItemDetail";
+import productsList from "../../constants/productsList";
 
-const ItemDetailContainer = () => {
-  const [item, setItem] = useState({});
-
-  function getFromRemote() {
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        res({ id: 3, nombre: "Pantalon", precio: 15 });
-      }, 3000);
-    });
-  }
+const ItemDetailContainer = ({ idToShow }) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getFromRemote().then((res) => {
-      setItem(res);
+    productsList().then((res) => {
+      setProducts(res);
+      setLoading(false);
     });
   }, []);
 
-  return <Item id={item.id} nombre={item.nombre} precio={item.precio}></Item>;
+  return (
+    <>
+      {loading && <p>Cargando ficha</p>}
+
+      {products
+        .filter((p) => p.id == idToShow)
+        .map((filteredProduct) => (
+          <ItemDetail
+            key={filteredProduct.id}
+            img={filteredProduct.img}
+            title={filteredProduct.title}
+            price={filteredProduct.price}
+            description= {filteredProduct.description}
+          />
+        ))}
+    </>
+  );
 };
 
 export default ItemDetailContainer;

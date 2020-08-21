@@ -24,7 +24,7 @@ const ItemCount = ({ initial = 0, min, max, onAdd }) => {
                 <p> {count} </p>
                 <Button variant="outlined" color="primary" onClick={sumar} disabled={count >= max}> <AddIcon color="primary"></AddIcon> </Button>
             </div>
-            <Button variant="outlined" color="primary" onClick={onAdd} className='addToCart'> agregar al carrito </Button>
+            <button onClick={onAdd} className='addToCart'>agregar al carrito</button>
         </div>
     );
 };
