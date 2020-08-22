@@ -3,26 +3,27 @@ import "./styles/App.scss";
 import NavBar from "./common/NavBar/NavBar";
 import Home from "./page/Home/Home";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import ItemList from "./components/ItemList/ItemList";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import styled from "styled-components";
 import phone from "./assets/icons/phone.svg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
+    <BrowserRouter>
+      <NavBar />
       <PhoneSticky>
         <a href="#"> 11 2345 6789 </a>
       </PhoneSticky>
-      <Home />
-      <ItemList/>
-      <ItemDetailContainer idToShow = {2}/>
-      {/* 
-    <Galeria /> */}
-    </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/2">
+          <ItemDetailContainer idToShow={2} />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
