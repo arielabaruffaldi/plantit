@@ -45,9 +45,9 @@ const NavBar = () => {
             <a href="#">Cuenta </a>
           </li>
           <li>
-            <a href="#">
+            <NavLink href={'/cart'}>
               <img src={cart} width="50" />
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>

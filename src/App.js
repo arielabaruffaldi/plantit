@@ -7,6 +7,7 @@ import ItemList from './components/ItemList/ItemList';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import phone from "./assets/icons/phone.svg";
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route exact path="/item/:id">
           <ItemDetailContainer />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
         </Route>
       </Switch>
     </BrowserRouter>
