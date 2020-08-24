@@ -3,11 +3,11 @@ import "./styles/App.scss";
 import NavBar from "./common/NavBar/NavBar";
 import Home from "./page/Home/Home";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import ItemList from './components/ItemList/ItemList';
+import ItemList from "./components/ItemList/ItemList";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import phone from "./assets/icons/phone.svg";
-import Cart from './components/Cart/Cart';
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/category/:id">
-          <ItemList/>
+        <Route exact path="/plantas">
+          <ItemList />
         </Route>
         <Route exact path="/item/:id">
           <ItemDetailContainer />

@@ -2,12 +2,12 @@ import React from "react";
 import cart from "./../../assets/icons/cart.svg";
 import search from "./../../assets/icons/search.svg";
 import "./NavBar.scss";
-import NavLink from "../NavLink/NavLink";
+import NavLinks from "../NavLinks/NavLinks";
 
 const navItems = [
   {
-    text: "Home",
-    href: "/",
+    text: "Colecciones",
+    href: "/colecciones",
   },
   {
     text: "Plantas",
@@ -23,14 +23,14 @@ const NavBar = () => {
   return (
     <header>
       <nav>
-        <NavLink className="logo" href="/" >
+        <NavLinks className="logo" href="/">
           plant <span>it.</span>
-        </NavLink>
+        </NavLinks>
         <ul className="nav-links">
           {navItems.map(function (item, key) {
             return (
               <li>
-                <NavLink href={item.href} key={key} text={item.text} />
+                <NavLinks href={item.href} key={key} text={item.text} />
               </li>
             );
           })}
@@ -45,9 +45,9 @@ const NavBar = () => {
             <a href="#">Cuenta </a>
           </li>
           <li>
-            <NavLink href={'/cart'}>
+            <NavLinks href={"/cart"}>
               <img src={cart} width="50" />
-            </NavLink>
+            </NavLinks>
           </li>
         </ul>
       </nav>

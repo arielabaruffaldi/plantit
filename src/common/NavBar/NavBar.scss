@@ -44,10 +44,8 @@ nav {
             justify-content: flex-start;
             li {
                 padding: 0 1em;
-                &:first-child {
-                    >a {
-                        border-bottom: 1.5px solid $secondaryColor;
-                    }
+                >a.activeCategory {
+                    border-bottom: 1.5px solid $secondaryColor;
                 }
             }
         }

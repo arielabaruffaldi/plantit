@@ -1,38 +1,41 @@
+@import '../../styles/base.scss';
 .itemCount {
-  display: flex;
-  flex-direction: column;
-  max-width: 15em;
-  > div {
     display: flex;
-    align-items: center;
-    margin: 0.5em 0;
-    > p {
-      margin: 0 1em;
-      min-width: 1.5em;
-      text-align: center;
+    flex-direction: column;
+    max-width: 15em;
+    >div {
+        display: flex;
+        align-items: center;
+        margin: 0.5em 0;
+        >p {
+            margin: 0 1em;
+            min-width: 1.5em;
+            text-align: center;
+        }
     }
-  }
-  .addToCart{
-    background: transparent;
-    border: none;
-    text-transform: uppercase;
-    text-align: left;
-    font-weight: 600;
-    padding: 1em 0;
-  }
-  .MuiButton-label {
-    width: inherit;
-  }
-  .MuiButtonBase-root {
-    min-width: inherit;
-    padding: 0.5em;
-    border-radius: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  .MuiSvgIcon-root {
-    width: 0.6em;
-    height: 0.6em;
-  }
+    .addToCart {
+        background: $primaryColor;
+        color: $secondaryColor;
+        border: none;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        padding: 1em 0;
+        margin-top: 1em;
+        cursor: pointer;
+    }
+    .MuiButton-label {
+        width: inherit;
+    }
+    .MuiButtonBase-root {
+        min-width: inherit;
+        padding: 0.5em;
+        border-radius: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .MuiSvgIcon-root {
+        width: 0.6em;
+        height: 0.6em;
+    }
 }
