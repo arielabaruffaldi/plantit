@@ -1,13 +1,13 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const NavLink = ({href, text}) => {
-    return(
-        <li>
-            <Link to = {`${href}`}>{text}</Link>
-        </li>
-    )
-}
+const NavLink = ({ href, text, children }) => {
+  return (
+    <Link to={`${href}`} className= {children && "logo"}>
+      {text}
+      {children}
+    </Link>
+  );
+};
 
 export default NavLink;
-

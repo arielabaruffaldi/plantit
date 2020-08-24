@@ -23,13 +23,15 @@ const NavBar = () => {
   return (
     <header>
       <nav>
-        <a href="#" className="logo">
-          Nombre <span>plants.</span>
-        </a>
+        <NavLink className="logo" href="/" >
+          plant <span>it.</span>
+        </NavLink>
         <ul className="nav-links">
           {navItems.map(function (item, key) {
             return (
-              <NavLink href={item.href} key={key} text={item.text}></NavLink>
+              <li>
+                <NavLink href={item.href} key={key} text={item.text} />
+              </li>
             );
           })}
         </ul>

@@ -3,6 +3,7 @@ import "./styles/App.scss";
 import NavBar from "./common/NavBar/NavBar";
 import Home from "./page/Home/Home";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import ItemList from './components/ItemList/ItemList';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import styled from "styled-components";
@@ -19,7 +20,10 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/2">
+        <Route exact path="/category/:id">
+          <ItemList/>
+        </Route>
+        <Route exact path="/item/:id">
           <ItemDetailContainer idToShow={2} />
         </Route>
       </Switch>
