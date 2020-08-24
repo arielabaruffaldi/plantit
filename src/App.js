@@ -5,7 +5,6 @@ import Home from "./page/Home/Home";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemList from './components/ItemList/ItemList';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
 import styled from "styled-components";
 import phone from "./assets/icons/phone.svg";
 
@@ -24,7 +23,7 @@ function App() {
           <ItemList/>
         </Route>
         <Route exact path="/item/:id">
-          <ItemDetailContainer idToShow={2} />
+          <ItemDetailContainer />
         </Route>
       </Switch>
     </BrowserRouter>

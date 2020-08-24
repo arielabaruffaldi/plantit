@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Item = ({ id, img, title, price }) => {
   return (
     <li className="item">
-      <Link to={`/${id}`}>
+      <Link to={`/item/${id}`}>
         <img src={img} />
         <div className="info">
           <h3>{title}</h3>

@@ -5,8 +5,7 @@ import ItemCount from "./../ItemCount/ItemCount";
 const ItemDetail = ({ img, title, price, description }) => {
   return (
     <>
-      {console.log(img)}
-      {
+    {console.log(img)}
         <section className="ficha">
           <img src={img} />
           <div className="fichaDatos">
@@ -19,7 +18,6 @@ const ItemDetail = ({ img, title, price, description }) => {
             <ItemCount initial={0} min={0} max={5} />
           </div>
         </section>
-      }
     </>
   );
 };
