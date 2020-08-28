@@ -17,11 +17,10 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-    {console.log(idToShow)}
       {loading && <p>Cargando ficha</p>}
 
       {products
-        .filter((p) => p.id == idToShow)
+        .filter((p) => p.id === idToShow)
         .map((filteredProduct) => (
           <ItemDetail
             key={filteredProduct.id}

@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/App.scss";
 import NavBar from "./common/NavBar/NavBar";
+import Footer from "./common/Footer/Footer";
 import Home from "./page/Home/Home";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemList from "./components/ItemList/ItemList";
@@ -14,7 +15,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <PhoneSticky>
-        <a href="#"> 11 2345 6789 </a>
+        <a href="tel:11 2345 6789"> 11 2345 6789 </a>
       </PhoneSticky>
       <Switch>
         <Route exact path="/">
@@ -30,6 +31,7 @@ function App() {
           <Cart />
         </Route>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }

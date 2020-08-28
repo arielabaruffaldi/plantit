@@ -7,28 +7,28 @@ export default function productsList() {
     return new Promise((res, rej) => {
         setTimeout(() => {
             res([{
-                    id: 1,
+                    id: "1",
                     title: "Monstera",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 10,
                     img: img1,
                 },
                 {
-                    id: 2,
+                    id: "2",
                     title: "Sanseviera",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 5,
                     img: img2,
                 },
                 {
-                    id: 3,
+                    id: "3",
                     title: "Dieffembaquia",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 50,
                     img: img3,
                 },
                 {
-                    id: 4,
+                    id: "4",
                     title: "Potus",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 500,

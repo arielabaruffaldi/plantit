@@ -1,5 +1,9 @@
 $primaryColor: #6DE375;
 $secondaryColor: #2a392b;
+$lightGray: #f9f9f9;
+
+
+
 // MIXINS
 @mixin titleFont {
     font-family: 'Archivo', sans-serif;
@@ -7,4 +11,8 @@ $secondaryColor: #2a392b;
 
 @mixin paragraphFont {
     font-family: 'Barlow', sans-serif;
+}
+
+@mixin container {
+    margin: 2em;
 }

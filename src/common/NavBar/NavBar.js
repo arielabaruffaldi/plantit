@@ -23,30 +23,30 @@ const NavBar = () => {
   return (
     <header>
       <nav>
-        <NavLinks className="logo" href="/">
+        <NavLinks href="/">
           plant <span>it.</span>
         </NavLinks>
         <ul className="nav-links">
           {navItems.map(function (item, key) {
             return (
-              <li>
-                <NavLinks href={item.href} key={key} text={item.text} />
+              <li key={key}>
+                <NavLinks href={item.href}  text={item.text} />
               </li>
             );
           })}
         </ul>
         <ul className="right-nav">
           <li>
-            <a href="#">
-              <img src={search} width="15" />
+            <a href="#search">
+              <img src={search} alt="busqueda" width="15" />
             </a>
           </li>
           <li>
-            <a href="#">Cuenta </a>
+            <a href="#cuenta">Cuenta </a>
           </li>
           <li>
             <NavLinks href={"/cart"}>
-              <img src={cart} width="50" />
+              <img src={cart} alt= "carrito" width="50" />
             </NavLinks>
           </li>
         </ul>

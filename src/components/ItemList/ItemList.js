@@ -18,12 +18,13 @@ function ItemList() {
     {loading && <p>Cargando prods</p>}
 
       <ul className="ItemListWrapper">
-        {products.map((producto) => (
+        {products.map((producto, key) => (
           <Item
             id={producto.id}
             title={producto.title}
             price={producto.price}
             img={producto.img}
+            key = {key}
           ></Item>
         ))}
       </ul>

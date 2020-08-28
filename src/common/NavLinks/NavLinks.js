@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const NavLinks = ({ href, text, children }) => {
   return (
-    <NavLink to={`${href}`} className={children && "logo"} activeClassName="activeCategory">
+    <NavLink to={`${href}`} activeClassName="activeCategory">
       {text}
       {children}
     </NavLink>

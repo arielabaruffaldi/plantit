@@ -14,8 +14,8 @@ const Home = ({ greeting }) => {
         <h1>
           Re-discover <span>your green</span>
         </h1>
-        <a href="">view collection</a>
-        <img src={fondo} />
+        <a href="#asd">view collection</a>
+        <img src={fondo} alt="home fondo"/>
       </section>
       <ItemList></ItemList>
     </>
