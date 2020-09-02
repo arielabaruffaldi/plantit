@@ -14,21 +14,20 @@ function ItemList() {
   }, []);
 
   return (
-    <>
-    {loading && <p>Cargando prods</p>}
-
-      <ul className="ItemListWrapper">
-        {products.map((producto, key) => (
-          <Item
-            id={producto.id}
-            title={producto.title}
-            price={producto.price}
-            img={producto.img}
-            key = {key}
-          ></Item>
-        ))}
-      </ul>
-    </>
+      <section className="layout__container">
+        {loading && <p>Cargando prods</p>}
+        <ul className="ItemListWrapper">
+          {products.map((producto, key) => (
+            <Item
+              id={producto.id}
+              title={producto.title}
+              price={producto.price}
+              img={producto.img}
+              key={key}
+            ></Item>
+          ))}
+        </ul>
+      </section>
   );
 }
 

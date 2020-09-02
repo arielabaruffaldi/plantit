@@ -6,7 +6,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
 
 
 
-const ItemCount = ({ initial = 0, min, max, onAdd }) => {
+const ItemCount = ({ initial = 0, min, max, onAdd, children }) => {
     const [count, setcount] = useState(initial);
 
     useEffect(() => {
@@ -24,10 +24,13 @@ const ItemCount = ({ initial = 0, min, max, onAdd }) => {
     };
 
     return (
-        <div className="itemCount">
-            <Button variant="outlined" color="primary" onClick={restar} disabled={count <= min}> <RemoveIcon gcolor="primary" /> </Button>
-            <p> {count} </p>
-            <Button variant="outlined" color="primary" onClick={sumar} disabled={count >= max}> <AddIcon color="primary"></AddIcon> </Button>
+        <div className="itemCountWrapper">
+            <div className="itemCount">
+                <Button variant="outlined" color="primary" onClick={restar} disabled={count <= min}> <RemoveIcon gcolor="primary" /> </Button>
+                <p> {count} </p>
+                <Button variant="outlined" color="primary" onClick={sumar} disabled={count >= max}> <AddIcon color="primary"></AddIcon> </Button>
+            </div>
+            {children}
         </div>
     );
 };

@@ -2,8 +2,6 @@
 .item {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
     -webkit-box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.12);
     box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.12);
@@ -12,10 +10,19 @@
     }
    
     .info{
+        text-transform: uppercase;
         padding: 1em;
+        @include titleFont();   
+        font-size: .9em;        
         h3 {
-            font-weight: 100;
-            margin-top: 0;
+            font-weight: 700;
+            margin: 0 0 .5em;
+            @include paragraphFont();
+            font-size: 1.3em;        
+        }
+
+        p{
+            margin: 0.3em 0;
         }
     }
 }

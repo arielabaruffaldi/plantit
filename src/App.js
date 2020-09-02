@@ -8,7 +8,7 @@ import ItemList from "./components/ItemList/ItemList";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import phone from "./assets/icons/phone.svg";
-import Cart from "./components/Cart/Cart";
+import Cart from "./page/Cart/Cart";
 
 function App() {
   return (

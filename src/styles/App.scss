@@ -2,6 +2,9 @@
 * {
     box-sizing: border-box;
     color: $secondaryColor;
+}
+
+body{
     @include paragraphFont();
 }
 
@@ -16,6 +19,17 @@ ul li {
 
 a {
     text-decoration: none;
+}
+
+.layout__container{
+    width: 80%;
+    margin: auto;
+    margin-top: $heightNav;
+}
+
+header{
+    min-height: $heightNav;
+    top: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {

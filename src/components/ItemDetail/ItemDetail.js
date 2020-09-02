@@ -6,11 +6,11 @@ import ItemCount from "./../ItemCount/ItemCount";
 const ItemDetail = ({ img, title, price, description }) => {
 
   const [count, setCount] = useState()
+
   function onAdd(countComp) {
     setCount(countComp);
   }
 
-    
   return (
     <>
       <section className="ficha">
@@ -21,10 +21,9 @@ const ItemDetail = ({ img, title, price, description }) => {
             <p>{description}</p>
             <p className="price">{`$${price}`}</p>
           </div>
-          <div className="itemCountWrapper">
-            <ItemCount initial={1} min={1} max={5} onAdd={onAdd} />
+          <ItemCount initial={1} min={1} max={5} onAdd={onAdd}>
             <button className='addToCart' >agregar al carrito {count} {count === 1 ? `item` : `items`}</button>
-          </div>
+          </ItemCount>
         </div>
       </section>
     </>

@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
   }, []);
 
   return (
-    <>
+    <section className="layout__container">
       {loading && <p>Cargando ficha</p>}
 
       {products
@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
             description={filteredProduct.description}
           />
         ))}
-    </>
+    </section>
   );
 };
 
