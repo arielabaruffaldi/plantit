@@ -1,13 +1,61 @@
+@import "../../styles/base.scss";
 
-@import '../../styles/base.scss';
-
-footer{
-    background: $lightGray;
+footer {
+  background: $lightGray;
+  display: flex;
+  min-height: 40vh;
+  @include titleFont();
+  nav {
     display: flex;
-    nav{
-        display: flex;
-        justify-content: space-between;
-        @include container;
-        width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10em;
+    width: 100%;
+    .suscribeWrapper {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 3em;
+      > a:first-child {
+        margin-right: 3em;
+        font-weight: 700;
+        line-height: 1;
+        font-size: 2em;
+        color: $primaryColor;
+        @include paragraphFont();
+        span {
+          font-weight: 300;
+          display: block;
+        }
+      }
+      form {
+        p {
+          margin: 0 0 0.5em;
+          color: $primaryColor;
+        }
+        input {
+          padding: 1em 1.5em;
+          color: $primaryColor;
+          border: 1px solid #149c1e;
+          &::placeholder {
+            @include titleFont();
+            color: $primaryColor;
+          }
+        }
+      }
     }
+    ul {
+      display: flex;
+      justify-content: center;
+      margin: .5em;
+      li {
+        margin: 0 1em;
+        font-size: .9em;
+        font-weight: 300;
+        a{
+          color: $primaryColor;
+        }
+      }
+    }
+  }
 }

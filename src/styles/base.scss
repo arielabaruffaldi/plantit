@@ -1,4 +1,4 @@
-$primaryColor: #6DE375;
+$primaryColor: #22ac2b;
 $secondaryColor: #2a392b;
 $lightGray: #f9f9f9;
 
@@ -6,7 +6,7 @@ $heightNav: 100px;
 
 // MIXINS
 @mixin titleFont {
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Poppins', sans-serif;;
 }
 
 @mixin paragraphFont {

@@ -30,6 +30,20 @@ header {
                     color: $secondaryColor;
                     @include titleFont();
                     text-decoration: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    img[alt="carrito"]{
+                        width: 5.5em;
+                    }
+                    > span{
+                        position: absolute;
+                        bottom: -2px;
+                        color: white;
+                        font-size: 1.2em
+                    }
                 }
             }
             &.right-nav {

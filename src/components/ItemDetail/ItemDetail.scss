@@ -10,6 +10,7 @@
   img {
     max-width: 50%;
     width: 100%;
+    object-fit: cover;
   }
   h3 {
     font-weight: 700;
@@ -21,8 +22,12 @@
   .fichaDatos {
     text-align: left;
     max-width: 40%;
-    p{
-        width: 80%
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .info > p{
+        width: 80%;
+        margin: 2em 0;
     }
   }
 }

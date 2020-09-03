@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./ItemDetail.scss";
 import ItemCount from "./../ItemCount/ItemCount";
+import {useListContext} from "../../context/CartContext";
 
+const ItemDetail = ({ img, title, price, description, id }) => {
 
-const ItemDetail = ({ img, title, price, description }) => {
-
+  const {addItemCart} = useListContext()
   const [count, setCount] = useState()
 
   function onAdd(countComp) {
@@ -21,8 +22,8 @@ const ItemDetail = ({ img, title, price, description }) => {
             <p>{description}</p>
             <p className="price">{`$${price}`}</p>
           </div>
-          <ItemCount initial={1} min={1} max={5} onAdd={onAdd}>
-            <button className='addToCart' >agregar al carrito {count} {count === 1 ? `item` : `items`}</button>
+          <ItemCount onAdd={onAdd}>
+            <button className='addToCart' onClick={() => addItemCart ({img: img, description: description, title: title, id: id, price: price, count: count})}>agregar al carrito {count} {count === 1 ? `item` : `items`}</button>
           </ItemCount>
         </div>
       </section>

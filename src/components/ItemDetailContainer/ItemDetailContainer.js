@@ -28,6 +28,7 @@ const ItemDetailContainer = () => {
             title={filteredProduct.title}
             price={filteredProduct.price}
             description={filteredProduct.description}
+            id={filteredProduct.id}
           />
         ))}
     </section>

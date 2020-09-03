@@ -1,41 +1,59 @@
-@import '../../styles/base.scss';
+@import "../../styles/base.scss";
 .itemCountWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 15em;
+  align-items: center;
+  .itemCount {
     display: flex;
-    flex-direction: column;
-    max-width: 15em;
-    .itemCount {
-        display: flex;
-        align-items: center;
-        margin: 0.5em 0;
-        >p {
-            margin: 0 1em;
-            min-width: 1.5em;
-            text-align: center;
-        }
+    align-items: center;
+    margin: 0.5em 0;
+    > p {
+      margin: 0 1em;
+      min-width: 1.5em;
+      text-align: center;
+      color: $primaryColor;
+      font-weight: 600;
     }
-    .addToCart {
-        background: $primaryColor;
-        color: $secondaryColor;
-        border: none;
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 600;
-        padding: 1em 0;
-        margin-top: 1em;
-        cursor: pointer;
+  }
+  .addToCart {
+    color: $primaryColor;
+    background: transparent;
+    border: 1px solid $primaryColor;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background: $primaryColor;
+      transition: 400ms all;
     }
-    .MuiButton-label {
-        width: inherit;
+  }
+  button:not(.addToCart) {
+    background: transparent;
+    border: 1px solid $primaryColor;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    cursor: pointer;
+    svg {
+      width: 0.6em;
+      height: 0.6em;
+      fill: $primaryColor;
     }
-    .MuiButtonBase-root {
-        min-width: inherit;
-        padding: 0.5em;
-        border-radius: 100%;
-        display: flex;
-        justify-content: flex-start;
+    &:hover {
+      color: white;
+      background: $primaryColor;
+      transition: 400ms all;
+      svg {
+        fill: white;
+      }
     }
-    .MuiSvgIcon-root {
-        width: 0.6em;
-        height: 0.6em;
-    }
+  }
 }

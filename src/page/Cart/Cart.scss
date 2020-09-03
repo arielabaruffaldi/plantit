@@ -1,4 +1,5 @@
 .checkout{
+    margin-bottom: 3em;
     h1{
         text-transform: uppercase;
         font-size: 2em;
@@ -13,7 +14,6 @@
             align-items: flex-start;
             .info{
                 text-align: left;
-                padding: 1em 0;
             }
         }
     }

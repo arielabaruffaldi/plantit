@@ -3,6 +3,8 @@ import cart from "./../../assets/icons/cart.svg";
 import search from "./../../assets/icons/search.svg";
 import "./NavBar.scss";
 import NavLinks from "../NavLinks/NavLinks";
+import { ListProvider, useListContext } from "./../../context/CartContext";
+
 
 const navItems = [
   {
@@ -20,6 +22,8 @@ const navItems = [
 ];
 
 const NavBar = () => {
+  const {quantity} = useListContext(); 
+
   return (
     <header>
       <nav>
@@ -47,6 +51,7 @@ const NavBar = () => {
           <li>
             <NavLinks href={"/cart"}>
               <img src={cart} alt= "carrito" width="50" />
+              <span>{quantity}</span>
             </NavLinks>
           </li>
         </ul>

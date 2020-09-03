@@ -12,9 +12,9 @@ const Home = ({ greeting }) => {
           trending <span>collection</span>
         </p>
         <h1>
-          Re-discover <span>your green</span>
+          Redescubrí <span>tus espacios</span>
         </h1>
-        <a href="#asd">view collection</a>
+        <a href="#asd">ver colección</a>
         <img src={fondo} alt="home fondo"/>
       </section>
       <ItemList></ItemList>

@@ -9,30 +9,33 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import phone from "./assets/icons/phone.svg";
 import Cart from "./page/Cart/Cart";
+import { ListProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <PhoneSticky>
-        <a href="tel:11 2345 6789"> 11 2345 6789 </a>
-      </PhoneSticky>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/plantas">
-          <ItemList />
-        </Route>
-        <Route exact path="/item/:id">
-          <ItemDetailContainer />
-        </Route>
-        <Route exact path="/cart">
-          <Cart />
-        </Route>
-      </Switch>
-      <Footer/>
-    </BrowserRouter>
+    <ListProvider value={[]} min ={1} max={10} initial = {0}>
+      <BrowserRouter>
+        <NavBar />
+        <PhoneSticky>
+          <a href="tel:11 2345 6789"> 11 2345 6789 </a>
+        </PhoneSticky>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/plantas">
+            <ItemList />
+          </Route>
+          <Route exact path="/item/:id">
+            <ItemDetailContainer />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
+        <Footer />
+      </BrowserRouter>
+    </ListProvider>
   );
 }
 

@@ -9,7 +9,7 @@ const Item = ({ id, img, title, price, color, cantidad }) => {
                     <h3>{title}</h3>
                     <p>{`$${price}`}</p>
                     <p className="color">{color}</p>
-                    <p>{cantidad}</p>
+                    <p>{cantidad} unidades</p>
                 </div>
             </Link>
         
