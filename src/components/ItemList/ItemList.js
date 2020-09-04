@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
-import "./ItemList.scss";
+import styles from "./ItemList.module.scss";
 import productsList from "../../constants/productsList";
 
 function ItemList() {
@@ -16,7 +16,7 @@ function ItemList() {
   return (
       <section className="layout__container">
         {loading && <p>Cargando prods</p>}
-        <ul className="ItemListWrapper">
+        <ul className={styles.ItemListWrapper}>
           {products.map((producto, key) => (
             <Item
               id={producto.id}

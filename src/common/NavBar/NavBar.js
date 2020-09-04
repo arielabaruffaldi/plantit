@@ -1,9 +1,9 @@
 import React from "react";
 import cart from "./../../assets/icons/cart.svg";
 import search from "./../../assets/icons/search.svg";
-import "./NavBar.scss";
+import styles from "./NavBar.module.scss";
 import NavLinks from "../NavLinks/NavLinks";
-import { ListProvider, useListContext } from "./../../context/CartContext";
+import { ListProvider, useCartContext } from "./../../context/CartContext";
 
 
 const navItems = [
@@ -22,7 +22,7 @@ const navItems = [
 ];
 
 const NavBar = () => {
-  const {quantity} = useListContext(); 
+  const {quantity} = useCartContext(); 
 
   return (
     <header>
@@ -30,7 +30,7 @@ const NavBar = () => {
         <NavLinks href="/">
           plant <span>it.</span>
         </NavLinks>
-        <ul className="nav-links">
+        <ul className={styles.navLinks}>
           {navItems.map(function (item, key) {
             return (
               <li key={key}>
@@ -39,7 +39,7 @@ const NavBar = () => {
             );
           })}
         </ul>
-        <ul className="right-nav">
+        <ul className={styles.rightNav}>
           <li>
             <a href="#search">
               <img src={search} alt="busqueda" width="15" />

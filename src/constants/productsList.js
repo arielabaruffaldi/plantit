@@ -11,6 +11,7 @@ export default function productsList() {
                     title: "Monstera",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 10,
+                    color: "blanco",
                     img: img1,
                 },
                 {
@@ -18,6 +19,7 @@ export default function productsList() {
                     title: "Sanseviera",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 5,
+                    color: "blanco",
                     img: img2,
                 },
                 {
@@ -25,6 +27,7 @@ export default function productsList() {
                     title: "Dieffembaquia",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 50,
+                    color: "blanco",
                     img: img3,
                 },
                 {
@@ -32,6 +35,7 @@ export default function productsList() {
                     title: "Potus",
                     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptates distinctio",
                     price: 500,
+                    color: "blanco",
                     img: img4,
                 },
             ]);

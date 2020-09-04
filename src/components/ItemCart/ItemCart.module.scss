@@ -1,0 +1,28 @@
+@import "../../styles/base.scss";
+.item {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.12);
+  img {
+    width: 100%;
+  }
+
+  .infoCart {
+    text-transform: uppercase;
+    padding: 1em;
+    @include titleFont();
+    font-size: 0.9em;
+    h3 {
+      font-weight: 700;
+      margin: 0 0 0.5em;
+      @include paragraphFont();
+      font-size: 1.3em;
+    }
+    p{
+        margin: 0.3em;
+    }
+  }
+}

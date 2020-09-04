@@ -16,24 +16,7 @@
       font-weight: 600;
     }
   }
-  .addToCart {
-    color: $primaryColor;
-    background: transparent;
-    border: 1px solid $primaryColor;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 600;
-    padding: 1em;
-    margin-top: 1em;
-    border-radius: 50px;
-    cursor: pointer;
-    &:hover {
-      color: white;
-      background: $primaryColor;
-      transition: 400ms all;
-    }
-  }
-  button:not(.addToCart) {
+  button {
     background: transparent;
     border: 1px solid $primaryColor;
     border-radius: 100%;

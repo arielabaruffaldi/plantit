@@ -20,7 +20,7 @@ footer {
         margin-right: 3em;
         font-weight: 700;
         line-height: 1;
-        font-size: 2em;
+        font-size: 3em;
         color: $primaryColor;
         @include paragraphFont();
         span {
@@ -37,6 +37,7 @@ footer {
           padding: 1em 1.5em;
           color: $primaryColor;
           border: 1px solid #149c1e;
+          background: transparent;
           &::placeholder {
             @include titleFont();
             color: $primaryColor;

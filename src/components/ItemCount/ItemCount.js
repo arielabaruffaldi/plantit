@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import "./ItemCount.scss";
+import React, { useEffect } from "react";
+import styles from "./ItemCount.module.scss";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
-import { useListContext } from "./../../context/CartContext";
+import { useCartContext } from "./../../context/CartContext";
 
 const ItemCount = ({ onAdd, children }) => {
-  const { sumar, restar, count } = useListContext();
+  const { sumar, restar, count } = useCartContext();
   useEffect(() => {
     onAdd(count);
   }, [count]);
   return (
-    <div className="itemCountWrapper">
-      <div className="itemCount">
+    <div className={styles.itemCountWrapper}>
+      <div className={styles.itemCount}>
         <button onClick={restar}>
           <RemoveIcon gcolor="primary" />
         </button>

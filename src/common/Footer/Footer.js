@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.scss";
+import styles from "./Footer.module.scss";
 import NavLinks from "../NavLinks/NavLinks";
 
 const Footer = () => {
@@ -28,7 +28,7 @@ const Footer = () => {
   return (
     <footer>
       <nav>
-        <div className="suscribeWrapper">
+        <div className={styles.suscribeWrapper}>
           <NavLinks href="/">
             plant <span>it.</span>
           </NavLinks>
