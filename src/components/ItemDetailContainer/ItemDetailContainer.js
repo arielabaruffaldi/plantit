@@ -9,12 +9,29 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
   const idToShow = useParams().id;
 
+  /* useEffect(() => {
+    const db = getFirestore();
+    const itemCollection = db.collection("items");
+    const priceyItems = itemCollection.where("price", "<", 3000);
+    priceyItems.get().then((querySnapshot) => {
+      if (!querySnapshot.size === 0) {
+        console.log("no hay items");
+      }
+      setProducts(
+        querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+      setLoading(false);
+    });
+  }, []); */
+
   useEffect(() => {
-    const productos = productsList();
-    console.log(productos);
+     const misProductos = Promise.resolve(productsList());
+    misProductos.then((data) => {
+      console.log(data);
+    });
     //setProducts(productsList);
     setLoading(false);
-  }, [productsList]);
+  }, []);
 
   return (
     <section className="layout__container">
