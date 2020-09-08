@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./../ItemDetail/ItemDetail";
-import productsList from "../../constants/productsList";
 import { useParams } from "react-router-dom";
+import { getFirestore } from "./../firebase/index";
+import productsList from "./../../constants/productsList";
 
 const ItemDetailContainer = () => {
   const [products, setProducts] = useState([]);
@@ -9,11 +10,11 @@ const ItemDetailContainer = () => {
   const idToShow = useParams().id;
 
   useEffect(() => {
-    productsList().then((res) => {
-      setProducts(res);
-      setLoading(false);
-    });
-  }, []);
+    const productos = productsList();
+    console.log(productos);
+    //setProducts(productsList);
+    setLoading(false);
+  }, [productsList]);
 
   return (
     <section className="layout__container">
