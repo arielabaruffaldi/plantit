@@ -3,7 +3,7 @@ import "./Home.scss";
 import fondo from "./../../assets/img/home.png";
 import ItemList from "./../../components/ItemList/ItemList";
 
-const Home = ({ greeting }) => {
+const Home = () => {
   return (
     <>
       <section className="home">

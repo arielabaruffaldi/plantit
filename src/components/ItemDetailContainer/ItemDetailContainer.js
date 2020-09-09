@@ -2,54 +2,37 @@ import React, { useState, useEffect } from "react";
 import ItemDetail from "./../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "./../firebase/index";
-import productsList from "./../../constants/productsList";
 
 const ItemDetailContainer = () => {
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const idToShow = useParams().id;
 
-  /* useEffect(() => {
+  useEffect(() => {
     const db = getFirestore();
     const itemCollection = db.collection("items");
-    const priceyItems = itemCollection.where("price", "<", 3000);
-    priceyItems.get().then((querySnapshot) => {
-      if (!querySnapshot.size === 0) {
-        console.log("no hay items");
+    const item = itemCollection.doc(idToShow);
+    item.get().then((doc) => {
+      if(!doc.exists){
+        console.log("no existe el producto")
       }
-      setProducts(
-        querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
+      setProduct(doc.data());
       setLoading(false);
     });
-  }, []); */
-
-  useEffect(() => {
-     const misProductos = Promise.resolve(productsList());
-    misProductos.then((data) => {
-      console.log(data);
-    });
-    //setProducts(productsList);
-    setLoading(false);
   }, []);
 
   return (
     <section className="layout__container">
       {loading && <p>Cargando ficha</p>}
-
-      {products
-        .filter((p) => p.id === idToShow)
-        .map((filteredProduct) => (
-          <ItemDetail
-            key={filteredProduct.id}
-            img={filteredProduct.img}
-            title={filteredProduct.title}
-            price={filteredProduct.price}
-            description={filteredProduct.description}
-            id={filteredProduct.id}
-            color={filteredProduct.color}
-          />
-        ))}
+      {!loading && <ItemDetail
+        key={product.id}
+        img={`/assets/img/${product.imageId}`}
+        title={product.title}
+        price={product.price}
+        description={product.description}
+        id={product.id}
+        color={product.color}
+      />}
     </section>
   );
 };

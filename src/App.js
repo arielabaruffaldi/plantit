@@ -13,7 +13,7 @@ import { ListProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <ListProvider value={[]} min ={1} max={10} initial = {0}>
+    <ListProvider value={[]} min={1} max={10} initial={0}>
       <BrowserRouter>
         <NavBar />
         <PhoneSticky>
@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/plantas">
+          <Route exact path="/plantas/:categoryId">
             <ItemList />
           </Route>
           <Route exact path="/item/:id">

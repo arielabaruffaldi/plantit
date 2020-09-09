@@ -3,8 +3,7 @@ import cart from "./../../assets/icons/cart.svg";
 import search from "./../../assets/icons/search.svg";
 import styles from "./NavBar.module.scss";
 import NavLinks from "../NavLinks/NavLinks";
-import { ListProvider, useCartContext } from "./../../context/CartContext";
-
+import { useCartContext } from "./../../context/CartContext";
 
 const navItems = [
   {
@@ -14,6 +13,10 @@ const navItems = [
   {
     text: "Plantas",
     href: "/plantas",
+    children: [
+      { text: "interior", href: "/interior" },
+      { text: "exterior", href: "/exterior" },
+    ],
   },
   {
     text: "Accesorios",
@@ -22,7 +25,7 @@ const navItems = [
 ];
 
 const NavBar = () => {
-  const {quantity} = useCartContext(); 
+  const { quantity } = useCartContext();
 
   return (
     <header>
@@ -34,7 +37,18 @@ const NavBar = () => {
           {navItems.map(function (item, key) {
             return (
               <li key={key}>
-                <NavLinks href={item.href}  text={item.text} />
+                <NavLinks href={item.href} text={item.text} />
+                {item.children && (
+                  <ul className={styles.submenu}>
+                    {item.children.map(function (subItem, key) {
+                      return (
+                        <li key={key}>
+                          <NavLinks href={`${item.href}${subItem.href}`} text={subItem.text} />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
               </li>
             );
           })}
@@ -50,7 +64,7 @@ const NavBar = () => {
           </li>
           <li>
             <NavLinks href={"/cart"}>
-              <img src={cart} alt= "carrito" width="50" />
+              <img src={cart} alt="carrito" width="50" />
               <span>{quantity}</span>
             </NavLinks>
           </li>

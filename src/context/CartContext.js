@@ -7,6 +7,8 @@ export const useCartContext = () => useContext(CartContext);
 export function ListProvider({ children, min, max, initial }) {
   const [count, setCount] = useState(initial);
   const [listItems, setListItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+
   const restar = () => {
     if (count > min) {
       setCount(count - 1);
@@ -28,19 +30,36 @@ export function ListProvider({ children, min, max, initial }) {
     const newList = [...listItems, itemAdd];
     setListItems(newList);
     setCount(initial);
-    console.log(listItems)
+    console.log(listItems);
   }
 
-  function getQuantityCart(){
+  function getQuantityCart() {
     let total = 0;
-    listItems.map(item=>{
+    listItems.map((item) => {
       total += item.count;
-    })
+    });
+    return total;
+  }
+
+  function getTotalPrice() {
+    let total = 0;
+    total = listItems.reduce((prev, next) => prev + next.price * next.count, 0);
     return total;
   }
 
   return (
-    <CartContext.Provider value={{ restar, sumar, count, counterHandler, addItemCart, listItems, quantity: getQuantityCart() }}>
+    <CartContext.Provider
+      value={{
+        restar,
+        sumar,
+        count,
+        counterHandler,
+        addItemCart,
+        listItems,
+        quantity: getQuantityCart(),
+        totalPrice: getTotalPrice(),
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

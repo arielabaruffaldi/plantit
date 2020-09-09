@@ -6,7 +6,7 @@ import NavLinks from "./../../common/NavLinks/NavLinks";
 import ButtonGreen from "./../../components/ButtonGreen/ButtonGreen";
 
 const Cart = () => {
-  const { listItems } = useCartContext();
+  const { listItems, totalPrice } = useCartContext();
   return (
     <section className={`${styles.checkout} layout__container`}>
       <h1>Carrito de la compra</h1>
@@ -37,6 +37,7 @@ const Cart = () => {
               );
             })}
           </ul>
+          <span>TOTAL: {totalPrice}</span>
         </>
       )}
     </section>

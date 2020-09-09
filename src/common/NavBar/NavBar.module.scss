@@ -29,6 +29,29 @@ header {
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.8em;
+        position: relative;
+        .submenu {
+          opacity: 0;
+          position: absolute;
+          bottom: -2rem;
+          pointer-events: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          transition: 120ms height linear, 120ms width linear, 120ms background-color linear;
+          > li {
+            padding: 0;
+          }
+        }
+        &:hover {
+          .submenu {
+            opacity: 1;
+            transition: 400ms height linear, 120ms width linear, 120ms background-color linear;
+            pointer-events: initial;
+            
+          }
+        }
         a {
           color: $secondaryColor;
           @include titleFont();
