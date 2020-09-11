@@ -7,6 +7,8 @@ header {
     width: 100%;
     padding: 1em 3em;
     display: flex;
+    position: relative;
+
     > a:first-child {
       margin-right: 3em;
       font-weight: 700;
@@ -29,7 +31,10 @@ header {
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.8em;
+        height: 100%;
+        display: flex;
         position: relative;
+        align-items: center;
         .submenu {
           opacity: 0;
           position: absolute;
@@ -39,7 +44,8 @@ header {
           flex-direction: column;
           justify-content: flex-start;
           align-items: flex-start;
-          transition: 120ms height linear, 120ms width linear, 120ms background-color linear;
+          background: white;
+
           > li {
             padding: 0;
           }
@@ -47,9 +53,9 @@ header {
         &:hover {
           .submenu {
             opacity: 1;
-            transition: 400ms height linear, 120ms width linear, 120ms background-color linear;
+            transition: 400ms height linear, 120ms width linear,
+              120ms background-color linear;
             pointer-events: initial;
-            
           }
         }
         a {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import cart from "./../../assets/icons/cart.svg";
 import search from "./../../assets/icons/search.svg";
 import styles from "./NavBar.module.scss";
@@ -26,9 +26,25 @@ const navItems = [
 
 const NavBar = () => {
   const { quantity } = useCartContext();
+  const [scrolled, setScrolled] = React.useState(false);
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 200) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  });
+  let navbarClasses = ["navbar"];
+  if (scrolled) {
+    navbarClasses.push("scrolled");
+  }
   return (
-    <header>
+    <header className={navbarClasses.join(" ")}>
       <nav>
         <NavLinks href="/">
           plant <span>it.</span>
@@ -43,7 +59,10 @@ const NavBar = () => {
                     {item.children.map(function (subItem, key) {
                       return (
                         <li key={key}>
-                          <NavLinks href={`${item.href}${subItem.href}`} text={subItem.text} />
+                          <NavLinks
+                            href={`${item.href}${subItem.href}`}
+                            text={subItem.text}
+                          />
                         </li>
                       );
                     })}

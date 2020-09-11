@@ -1,49 +1,55 @@
-@import './base.scss';
+@import "./base.scss";
 * {
-    box-sizing: border-box;
-    color: $secondaryColor;
+  box-sizing: border-box;
+  color: $secondaryColor;
 }
 
-body{
-    @include paragraphFont();
+header {
+  &.scrolled, &:hover {
+    background-color: white;
+  }
+}
+
+body {
+  @include paragraphFont();
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 ul li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.layout__container{
-    width: 85%;
-    margin: auto;
-    margin-top: $heightNav;
-    margin-bottom: 4em;
+.layout__container {
+  width: 85%;
+  margin: auto;
+  margin-top: $heightNav;
+  margin-bottom: 4em;
 }
 
-header{
-    min-height: $heightNav;
-    top: 0;
+header {
+  min-height: $heightNav;
+  top: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
