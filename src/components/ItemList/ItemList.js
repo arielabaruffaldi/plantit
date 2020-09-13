@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Item from "./Item";
 import styles from "./ItemList.module.scss";
 import { getFirestore } from "./../firebase/index";
+import Loader from "./../Loader/Loader"
 
 function ItemList() {
   const [products, setProducts] = useState([]);
@@ -13,9 +14,11 @@ function ItemList() {
     const db = getFirestore();
     const itemCollection = db.collection("items");
     let priceyItems = {};
-    
-    typeof categoryId == 'undefined' ?
-      priceyItems = itemCollection.where("price", ">", 0) : priceyItems = itemCollection.where("price", ">", 0).where("categoryId", "==", categoryId);
+    typeof categoryId == "undefined"
+      ? (priceyItems = itemCollection.where("price", ">", 0))
+      : (priceyItems = itemCollection
+          .where("price", ">", 0)
+          .where("categoryId", "==", categoryId));
     priceyItems.get().then((querySnapshot) => {
       if (!querySnapshot.size === 0) {
         console.log("no hay items");
@@ -29,7 +32,7 @@ function ItemList() {
 
   return (
     <section className="layout__container">
-      {loading && <p>Cargando prods</p>}
+      {loading && <Loader/>}
       <ul className={styles.ItemListWrapper}>
         {products.map((producto, key) => (
           <Item

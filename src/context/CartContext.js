@@ -8,8 +8,8 @@ export function ListProvider({ children, min, max, initial }) {
   const [count, setCount] = useState(initial);
   const [listItems, setListItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [buyer, setBuyer] = useState();
-  const [order, setOrder] = useState();
+  /* const [buyer, setBuyer] = useState([]); */
+  const [buyer, setBuyer] = useState({})
 
   const restar = () => {
     if (count > min) {
@@ -79,9 +79,10 @@ export function ListProvider({ children, min, max, initial }) {
         buyer,
         setBuyer,
         deleteItemCart,
-        order, 
-        setOrder,
-        min
+        min,
+        buyer,
+        setBuyer,
+        setListItems
       }}
     >
       {children}
