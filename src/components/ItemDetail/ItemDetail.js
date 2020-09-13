@@ -5,7 +5,7 @@ import { useCartContext } from "../../context/CartContext";
 import PropTypes from "prop-types";
 
 const ItemDetail = ({ img, title, price, description, id, color }) => {
-  const { addItemCart } = useCartContext();
+  const { addItemCart, min } = useCartContext();
   const [count, setCount] = useState();
 
   function onAdd(countComp) {
@@ -26,6 +26,7 @@ const ItemDetail = ({ img, title, price, description, id, color }) => {
           <ItemCount onAdd={onAdd}>
             <button
               className={styles.addToCart}
+              disabled={count < min ? true : false}
               onClick={() =>
                 addItemCart({
                   img: img,

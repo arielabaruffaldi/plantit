@@ -12,7 +12,6 @@ function ItemList() {
   useEffect(() => {
     const db = getFirestore();
     const itemCollection = db.collection("items");
-    console.log(categoryId);
     let priceyItems = {};
     
     typeof categoryId == 'undefined' ?

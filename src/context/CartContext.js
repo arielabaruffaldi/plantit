@@ -8,6 +8,7 @@ export function ListProvider({ children, min, max, initial }) {
   const [count, setCount] = useState(initial);
   const [listItems, setListItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [buyer, setBuyer] = useState()
 
   const restar = () => {
     if (count > min) {
@@ -30,7 +31,12 @@ export function ListProvider({ children, min, max, initial }) {
     const newList = [...listItems, itemAdd];
     setListItems(newList);
     setCount(initial);
-    console.log(listItems);
+  }
+
+  function deleteItemCart(itemId) {
+    const newList = listItems.filter(item => item.id !== itemId)
+    console.log(newList);
+    setListItems(newList);
   }
 
   function getQuantityCart() {
@@ -58,6 +64,10 @@ export function ListProvider({ children, min, max, initial }) {
         listItems,
         quantity: getQuantityCart(),
         totalPrice: getTotalPrice(),
+        buyer,
+        setBuyer,
+        deleteItemCart,
+        min
       }}
     >
       {children}

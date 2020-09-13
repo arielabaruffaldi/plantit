@@ -1,0 +1,15 @@
+@import "../../styles/base.scss";
+
+.InputContainer{
+    display: flex;
+    flex-direction: column;
+    .Input{
+        border: none;
+        border-bottom: 1.2px solid $primaryColor;
+        margin-top: .5em;
+        @include titleFont();
+        padding: 0;
+        
+    }
+}
+

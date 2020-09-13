@@ -29,7 +29,7 @@ const NavBar = () => {
   const [scrolled, setScrolled] = React.useState(false);
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 200) {
+    if (offset > 50) {
       setScrolled(true);
     } else {
       setScrolled(false);

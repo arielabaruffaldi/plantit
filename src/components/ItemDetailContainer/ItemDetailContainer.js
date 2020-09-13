@@ -16,7 +16,8 @@ const ItemDetailContainer = () => {
       if(!doc.exists){
         console.log("no existe el producto")
       }
-      setProduct(doc.data());
+      
+      setProduct({...doc.data(), id: doc.id});
       setLoading(false);
     });
   }, []);

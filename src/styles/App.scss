@@ -7,6 +7,7 @@
 header {
   &.scrolled, &:hover {
     background-color: white;
+    transition: 300ms all;
   }
 }
 
@@ -52,4 +53,19 @@ header {
   to {
     transform: rotate(360deg);
   }
+}
+
+input, button{
+  &:focus, &:active {
+    outline: none
+}
+}
+button{
+  transition: 300ms all;
+
+}
+
+button:disabled{
+  pointer-events: none;
+  opacity: .5;
 }
