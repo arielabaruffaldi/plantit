@@ -1,50 +1,74 @@
 @import "../../styles/base.scss";
 
-.ButtonGreen{
+.ButtonGreen {
+  @include titleFont();
+  padding: 0.6em 1.5em;
+  border: 1px solid $primaryColor;
+  width: fit-content;
+  border-radius: 100px;
+  grid-column: 2;
+  justify-self: end;
+  cursor: pointer;
+  a {
+    color: $primaryColor;
+  }
+
+  button {
+    background: transparent;
+    border: none;
     @include titleFont();
-    padding: 0.6em 1.5em;
-    border: 1px solid $primaryColor;
-    width: fit-content;   
-    border-radius: 100px;
-    grid-column: 2;
-    justify-self: end;
+    color: $primaryColor;
     cursor: pointer;
-    a{
-      color: $primaryColor;
-    }
+  }
 
-    button{
-        background: transparent;
-        border: none;
-        @include titleFont();
+  &:hover {
+    background: $primaryColor;
+    transition: 300ms all;
+    color: white;
+    a,
+    button {
+      color: white;
+    }
+  }
+  &.secondaryBtn {
+    background-color: $primaryColor;
+    a,
+    button {
+      color: white;
+    }
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $primaryColor;
+      transition: 300ms all;
+      a,
+      button {
         color: $primaryColor;
-        cursor: pointer;
-
-    }
-
-    &:hover{
-        background: $primaryColor;
         transition: 300ms all;
-        color: white;
-        a, button{
-          color: white
-        }
-        
-    }
-    &.secondaryBtn{
-      background-color: $primaryColor;
-      a, button{
-        color: white;
-      }
-      &:hover{
-        background-color: transparent;
-        border: 1px solid $primaryColor;
-        transition: 300ms all;
-        a, button{
-          color: $primaryColor;
-          transition: 300ms all;
-        }
-        
       }
     }
+  }
+  &.borderNone {
+    border: none;
+    padding: 0;
+    a,
+    button {
+      color: $secondaryColor;
+      padding: 0;
+      margin: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    &:hover {
+      a,
+      button {
+        color: black;
+      }
+      background: transparent;
+    }
+  }
+
+  button:disabled{
+    opacity: .3;
+    pointer-events: none;
+  }
 }

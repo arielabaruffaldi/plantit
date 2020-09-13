@@ -8,7 +8,8 @@ export function ListProvider({ children, min, max, initial }) {
   const [count, setCount] = useState(initial);
   const [listItems, setListItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [buyer, setBuyer] = useState()
+  const [buyer, setBuyer] = useState();
+  const [order, setOrder] = useState();
 
   const restar = () => {
     if (count > min) {
@@ -28,9 +29,21 @@ export function ListProvider({ children, min, max, initial }) {
   }
 
   function addItemCart(itemAdd) {
-    const newList = [...listItems, itemAdd];
-    setListItems(newList);
-    setCount(initial);
+    if (listItems.length > 0) {
+      listItems.map(item => {
+        if (item.id !== itemAdd.id) {
+          const newList = [...listItems, itemAdd];
+          setListItems(newList);
+          setCount(initial);
+        } else {
+          console.log("ya este el item" + itemAdd.id)
+        }
+      })
+    } else {
+      const newList = [...listItems, itemAdd];
+      setListItems(newList);
+      setCount(initial);
+    }
   }
 
   function deleteItemCart(itemId) {
@@ -67,6 +80,8 @@ export function ListProvider({ children, min, max, initial }) {
         buyer,
         setBuyer,
         deleteItemCart,
+        order, 
+        setOrder,
         min
       }}
     >

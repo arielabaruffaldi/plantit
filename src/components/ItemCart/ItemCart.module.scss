@@ -22,12 +22,19 @@
       font-size: 1.3em;
     }
     p{
-        margin: 0.3em;
+        margin: 0;
     }
-    span{
-      margin: 0.3em;
+    button{
+      background: transparent;
+      color: $primaryColor;
       font-weight: 500;
       cursor: pointer;
     }
+    >div{
+      margin: 1em 0;
+    }
+  }
+  &.disabledBtn{
+    pointer-events: none;
   }
 }

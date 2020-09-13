@@ -40,6 +40,7 @@ const Cart = () => {
                       color={"rosa"}
                       cantidad={item.count}
                       deleteItem={() => deleteItemCart(item.id)}
+                      editable={checkout ? false : true}
                     />
                   </>
                 );
@@ -50,6 +51,7 @@ const Cart = () => {
           </>
         )}
       {checkout && <Form />}
+      {buyer}
     </section>
 
   );
