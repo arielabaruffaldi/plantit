@@ -29,7 +29,6 @@ const Cart = () => {
             <span>{listItems.length} articulos</span>
             <ul className={styles.item_card_wrapper}>
               {listItems.map((item) => {
-                console.log(item)
                 return (
                   <>
                     <ItemCart
@@ -39,8 +38,8 @@ const Cart = () => {
                       img={item.img}
                       color={"rosa"}
                       cantidad={item.count}
-                      deleteItem={() => deleteItemCart(item.id)}
                       editable={checkout ? false : true}
+                      deleteItem={()=>deleteItemCart(item.id)}
                     />
                   </>
                 );

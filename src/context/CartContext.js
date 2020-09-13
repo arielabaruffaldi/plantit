@@ -48,7 +48,6 @@ export function ListProvider({ children, min, max, initial }) {
 
   function deleteItemCart(itemId) {
     const newList = listItems.filter(item => item.id !== itemId)
-    console.log(newList);
     setListItems(newList);
   }
 

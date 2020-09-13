@@ -30,7 +30,6 @@ function ItemList() {
   return (
     <section className="layout__container">
       {loading && <p>Cargando prods</p>}
-      {console.log(products)}
       <ul className={styles.ItemListWrapper}>
         {products.map((producto, key) => (
           <Item

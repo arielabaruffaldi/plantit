@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./ItemCart.module.scss";
 import ButtonGreen from "./../ButtonGreen/ButtonGreen"
 
-const Item = ({ id, img, title, price, color, cantidad, deleteItem, editable }) => {
+const ItemCart = ({ id, img, title, price, color, cantidad, deleteItem, editable }) => {
   return (
     <li className={styles.item} key={id}>
       <img src={img} alt="item" />
@@ -14,10 +14,10 @@ const Item = ({ id, img, title, price, color, cantidad, deleteItem, editable }) 
           <p className={styles.color}>{color}</p>
           <p>{cantidad} unidades</p>
         </div>
-        {editable &&<ButtonGreen handleClick={deleteItem} borderNone={true}><button>Eliminar</button></ButtonGreen>}
+        {editable && <ButtonGreen onClickHandler={deleteItem} borderNone={true}><button>Eliminar</button></ButtonGreen>}
       </div>
     </li>
   );
 };
 
-export default Item;
+export default ItemCart;
