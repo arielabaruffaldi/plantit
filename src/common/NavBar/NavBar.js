@@ -7,8 +7,8 @@ import { useCartContext } from "./../../context/CartContext";
 
 const navItems = [
   {
-    text: "Colecciones",
-    href: "/colecciones",
+    text: "Sets",
+    href: "/sets",
   },
   {
     text: "Plantas",

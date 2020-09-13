@@ -5,7 +5,8 @@
 }
 
 header {
-  &.scrolled, &:hover {
+  &.scrolled,
+  &:hover {
     background-color: white;
     transition: 300ms all;
   }
@@ -33,7 +34,10 @@ a {
   margin: auto;
   margin-top: $heightNav;
   margin-bottom: 4em;
-  min-height: 50vh;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
@@ -56,17 +60,18 @@ header {
   }
 }
 
-input, button{
-  &:focus, &:active {
-    outline: none
+input,
+button {
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
-}
-button{
+button {
   transition: 300ms all;
-
 }
 
-button:disabled{
+button:disabled {
   pointer-events: none;
-  opacity: .5;
+  opacity: 0.5;
 }
