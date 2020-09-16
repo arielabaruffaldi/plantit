@@ -23,6 +23,9 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
           <Route exact path="/plantas/">
             <ItemList />
           </Route>
@@ -35,9 +38,7 @@ function App() {
           <Route exact path="/item/:id">
             <ItemDetailContainer />
           </Route>
-          <Route exact path="/cart">
-            <Cart />
-          </Route>
+         
         </Switch>
         <Footer />
       </BrowserRouter>

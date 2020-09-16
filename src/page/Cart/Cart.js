@@ -40,10 +40,10 @@ const Cart = () => {
   }
 
   function createOrder() {
+    console.log("entra aca");
     setLoading(true);
     const db = getFirestore();
     const orders = db.collection("orders");
-    console.log(loading);
 
     listItemsCart.map((item) => {
       const itemStock = db.collection("items").doc(item.id);
@@ -112,31 +112,29 @@ const Cart = () => {
                         );
                       })}
                     </ul>
-                    <span className={styles.totalCheckout}>
-                      TOTAL: ${totalPrice}
-                    </span>
-                    <ButtonGreen onClickHandler={handleClick}>
-                      <button>
-                        {!checkout ? "Ir al checkout" : "Modificar orden"}
-                      </button>
-                    </ButtonGreen>
+                    <div>
+                      <span className={styles.totalCheckout}>
+                        TOTAL: ${totalPrice}
+                      </span>
+                      <ButtonGreen onClickHandler={handleClick}>
+                        <button>
+                          {!checkout ? "Ir al checkout" : "Modificar orden"}
+                        </button>
+                      </ButtonGreen>
+                    </div>
                   </>
                 )}
               </>
             )}
             {checkout && (
               <>
-                <Form />
-                <ButtonGreen secondaryBtn={true} onClickHandler={createOrder}>
-                  <button>Finalizar compra</button>
-                </ButtonGreen>
+                <Form createOrder={createOrder} />
               </>
             )}
           </>
         ) : (
           <Loader />
         )}
-
         {success && (
           <section className={styles.success}>
             <h2>Compra satisfactoria!</h2>
@@ -144,7 +142,6 @@ const Cart = () => {
           </section>
         )}
       </section>
-      )
     </>
   );
 };

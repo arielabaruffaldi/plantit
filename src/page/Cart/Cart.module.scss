@@ -1,5 +1,6 @@
 .checkout {
   margin-bottom: 3em;
+  flex-direction: column;
   h1 {
     text-transform: uppercase;
     font-size: 2em;
@@ -14,6 +15,7 @@
   .totalCheckout{
     font-weight: 700;
     margin: 2em 0;
+    text-align: center;
     display: block;
   }
   .success{
@@ -22,5 +24,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .btnSubmit{
+    margin: auto;
   }
 }
