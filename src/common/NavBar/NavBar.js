@@ -12,11 +12,7 @@ const navItems = [
   },
   {
     text: "Plantas",
-    href: "/plantas",
-    children: [
-      { text: "interior", href: "/interior" },
-      { text: "exterior", href: "/exterior" },
-    ],
+    href: "/plantas"
   },
   {
     text: "Accesorios",
